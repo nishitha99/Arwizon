@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <style>
+            #c{
+                width:100px;
+                height:100px;
+                border: 1px solid black;
+                background-color: palegreen;
+            }
+            </style>
+        <body>
+            <div id="c">
+
+            </div>
+            <button type="button" id="show">Start</button>
+            <button type="button" id="hide">Hide</button>
+            <script>
+                $(document).ready(
+                    function(){
+                        $("#show").click(
+
+                        function(){
+                        $("div").show();
+                    }
+                    
+                    
+                );
+                $("#hide").click(
+                function(){
+                        $("div").hide();
+
+                    }
+                );
+                    }
+                );
+
+                    
+                
+                </script>
+        </body>
+    </head>
+    </html>

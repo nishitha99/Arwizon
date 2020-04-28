@@ -1,0 +1,8 @@
+{
+    "employees":[
+        {"empname":"raju","empId":101,"phoneNo":5674897645},
+         {"empname":"Manju","empId":102,"phoneNo":5674897645},
+          {"empname":"Saju","empId":103,"phoneNo":5674897645},
+           {"empname":"Taju","empId":104,"phoneNo":5674897645}
+    ]
+}

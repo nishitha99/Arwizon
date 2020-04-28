@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        /*#h1{
+        text-align:center;
+        color:blue;
+        margin:25% 25%;
+        font-size:40px;
+        }*/
+        marquee{
+        color:blue;
+        font-size:50px;
+        width:100;
+        }
+
+        body{
+            background-color:#d9f3f3;
+        }
+        #div1 {
+          position:fixed;
+          width: 308px;
+          height: 315px;
+          border: 1px solid #aaaaaa;
+        }
+        #div1,#div20{
+        display:inline-block;
+        }
+        #div2,#div3,#div4,#div5,#div6,#div7,#div8,#div9,#div10,#div11,#div12,#div13{
+        width:100px;
+        height:100px;
+        border: 1px solid #aaaaaa;
+        display:inline-block;
+        }
+        #div2,#div7,#div6{
+        background-color:#FF9933;
+        }
+        #div5,#div3,#div10{
+        background-color:green;
+        }
+        #div4,#div9,#div8{
+        background-color:white;
+        }
+
+        #start{
+            cursor: pointer;
+             font-weight: 700; }
+        
+
+
+
+ </style>
+</head>
+<marquee>WELCOME TO ARWIZON</marquee>
+<body onload="bodyLoad()">
+<center><p style="color:black;margin-left:800px;"> You visited the page <span id="count"></span> times</p></center>
+<p>Drag the below boxes to make indian flag</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div20" style="margin-left:330px;width:320px;height:325px;">
+    <div id="div2" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div3" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div4" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div5" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div6" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div7" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div8" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div9" draggable="true" ondragstart="drag(event)"></div>
+    <div id="div10" draggable="true" ondragstart="drag(event)"></div>
+</div>
+
+<section id="stopWatch">
+    <p id="timer">Time : 00: 00: 00</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <p id="fulltime"></p>
+</section>
+
+<script>
+    var count = localStorage.getItem("count")
+    function bodyLoad(){
+        if (typeof(Storage)!== "undefined"){
+        count++;
+        localStorage.setItem("count",count);
+        document.querySelector("#count").textContent = localStorage.getItem("count");
+        } else {
+        document.getElementById("#count").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    
+    $document.ready( function(){
+ function stopTime(){
+     if(seconds!==0 || minutes!==0||hours!==0)
+     {
+         var fulltime=document.querySelector("#fulltime");
+         fulltime.style.dispaly="block";
+         var time=gethours+mins+secs;
+         fulltime.innerHTML='FullTime: ' + time;
+         seconds=0;
+         minutes=0;
+         hours=0;
+         secs= '0' + seconds;
+         mins= '0' + minutes + ': ';
+         gethours='0' + hours + ': ';
+         var x=document.querySelector("#timer");
+         var stopTime=gethours+mins+secs;
+         x.innerHTML=stopTime;
+         var showStart=document.querySelector("#start");
+         showStart.style.display="inline-block";
+         var showStop=document.querySelector("stop");
+         showStop.style.display="inline-block";
+        clearTimeout(clearTime);
+     }
+     stopTime()
+        window.addEventListener( 'load' ,function() 
+        {
+            var stop=document.querySelector("#stop");
+            stop.addEventListener( 'click', stopTime );
+        }
+        );
+        }
+    
+    
+         $("h1").css({"background-color":"blue","font-size":"42px"})
+     });
+     
+
+ 
+    
+</script>
+
+</body>
+</html>

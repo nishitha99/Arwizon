@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <style>
+        .borderColor{
+            border:1px solid red;
+        }
+        #p{
+				width:550px;
+				height:550px;
+				background-color:white;;
+				
+				margin-left:250px;
+				}
+
+            
+        </style>
+        <body>
+            <div class="container">
+                <div id="p">
+                <h1 style="color:darkblue;"><b>Registration Form</b></h1><br>
+                
+                
+                
+                <form  onsubmit="return submitForm(event)" novalidate method="get">
+                
+                
+        
+        Firstname: 
+          <input type="text" id="id1" oninput="namevalid1()" required pattern="[A-Za-z]+"/>
+           <span id="error"></span>
+           <br><br>
+        Lastname:
+        <input type="text" id="id2"/>
+        <span id="error1"></span>
+    
+      <br><br>
+     &nbsp;&nbsp; Email:
+      <input type="text" id="email">
+      <span id="error2"></span>
+        <br><br>
+Phone number:
+            <input type="text" id="inputNumber" required>
+            <span id="l"></span>
+          </div>
+          <button type="submit" id="submit" value="submit" style="margin-left: 20px;" >Submit</button>
+          
+        </div>
+          <script>
+              $(document).ready(
+                  function(){
+              $("button").css({"background-color":"blue","width":"70px","margin-left":"100px"});
+              
+              $("input").focus(function(){
+                  $(this).css({"background-color":"yellow"});
+              });
+              $("input").blur(function(){
+                  $(this).css({"background-color":"white"});
+              });
+
+            
+                  $("button").click(function(){
+                      alert("Your form has been submitted")});
+
+                     $("span").css({"color":"red"});
+              
+
+              /*function submitForm(ev){
+                  if(!document.querySelector("#id1").validity.valid)
+                    {
+                        document.querySelector("#id1").className="borderColor";
+                        showNameError()
+                    return false;
+                    }
+                    else if(!document.querySelector("#inputNumber").validity.valid)
+                    {
+                        document.querySelector("#inputNumber").className="borderColor";
+                        showNameError() 
+                        return false;
+                    }
+                 else {
+                     return true;
+                 }
+              }
+
+                 function showNameError(){
+                    if(document.querySelector("#id1").validity.valueMissing)
+                    document.querySelector("#error").textContent="The name is empty";
+                    else if(document.querySelector("#id1").validity.patternMismatch)
+                    document.querySelector("#error").textContent="Name should contain only characters";
+                    else if(document.querySelector("#inputNumber").validity.valueMissing)
+                    document.querySelector("#l").textContent="Enter the phone Number";
+
+                 }*/
+                  }
+              );
+          </script>
+        </form>
+        </div>
+        
+        </body>
+    </head>
+</html>
